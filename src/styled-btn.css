@@ -1,0 +1,14 @@
+.styled-btn{
+    background-color: #c21e1e;
+    color: white;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+
+}
+/* .styled-btn:hover{
+    background-color: #da5454;
+    height: 20px;
+    width: 60px;
+} */

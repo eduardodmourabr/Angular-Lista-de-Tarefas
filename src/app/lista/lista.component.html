@@ -27,13 +27,13 @@
                 </div>
             </mat-form-field>
             <mat-list class="mat-list">
-                <mat-list-item class="mat-list-item"*ngFor="let tarefa of lista; ">
+                <mat-list-item class="mat-list-item"*ngFor="let dado of lista; let i = index ">
                   <div class="tarefa" >
-                    <p>{{ tarefa }}</p>
+                    <p>{{ dado }}</p>
                     <button 
-                        (click)="excluirTarefa(tarefa)" 
+                        (click)="excluirTarefa(i)" 
                         (click)="emitirEvento()"
-                        appBtnD 
+                        btn
                         class="btn-excluir"
                         >X
                     </button>

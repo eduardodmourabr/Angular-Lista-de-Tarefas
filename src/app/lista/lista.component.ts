@@ -9,14 +9,18 @@ export class ListaComponent {
 
   title = 'atividade05';
   lista:Array<string> = []
+  dadoLocalStorage:string[] | null = []
+
+  ngOnInit():void {
+    this.recuperarDadosDoLocalStorage()
+  }
 
   @Input()
   titulo = 'Titulo'
 
-
   addStorage(){
     
-    localStorage.setItem('listaTarefa', JSON.stringify(this.lista))
+    localStorage.setItem('dado', JSON.stringify(this.lista))
     var key = localStorage.getItem('listaTarefa')
     console.log('Local Storage:'+key)
   }
@@ -24,33 +28,40 @@ export class ListaComponent {
   @ViewChild('inputLista')
   ipt!:ElementRef
 
-
   add(valor:string):void {
     this.lista.push(valor)
+
+    let arr = JSON.stringify(this.lista)
+    localStorage.setItem('dado', arr)
     this.ipt.nativeElement.value = ''
+    
+  }
+  recuperarDadosDoLocalStorage():void{
+    let storage = localStorage.getItem('dado')
+    let arr = JSON.parse(storage || '[]')
+    this.lista = arr
   }
   
-  excluirTarefa(t: any):void{
-    this.lista.splice(this.lista.indexOf(t),1)
-    console.log(this.lista)
+  excluirTarefa(index: number):void{
+    /* this.lista.splice(this.lista.indexOf(t),1) */
+
+    this.lista.splice(index, 1)
+    let arrStr = JSON.stringify(this.lista)
+      localStorage.setItem('dado', arrStr)
+      this.recuperarDadosDoLocalStorage()
     
   }
 
   excluirLista():void{
-    this.lista = [];
-    console.log(this.lista)
+    
+    localStorage.setItem('dado', '')
+      this.recuperarDadosDoLocalStorage()
     
   }
 
-
- 
-
   quantidade() {
     let n = this.lista.length
-    /* console.log('Quantidade de Tarefas: ' +n) */
-
     return n
-
   }
   
   @Output()
@@ -65,5 +76,22 @@ export class ListaComponent {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
   
 }
+
+
+  

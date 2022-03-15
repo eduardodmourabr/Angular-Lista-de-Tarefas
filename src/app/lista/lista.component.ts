@@ -8,6 +8,7 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
 export class ListaComponent {
 
   title = 'atividade05';
+  @Output()
   lista:Array<string> = []
   dadoLocalStorage:string[] | null = []
 
@@ -73,6 +74,11 @@ export class ListaComponent {
   btnClickEvent2: EventEmitter<any> = new EventEmitter<any>()
   emitirEvento2(): void{
     this.btnClickEvent2.emit()
+  }
+  @Output()
+  btnClickEvent3: EventEmitter<any> = new EventEmitter<any>()
+  emitirEvento3(): void{
+    this.btnClickEvent3.emit()
   }
 
 

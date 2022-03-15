@@ -14,10 +14,13 @@ export class AppComponent {
   constructor(private _snackBar: MatSnackBar) {
   }
   openSnackBar() {
-    this._snackBar.open('Tarefa excluida!!' , 'fechar',{duration:3000});
+    this._snackBar.open('Tarefa excluida!!' , 'fechar',{duration:1000});
   }
   openSnackBar2() {
-    this._snackBar.open("Lista excluída!" , 'fechar',{duration:3000});
+    this._snackBar.open("Lista excluída!" , 'fechar',{duration:1000});
+  }
+  openSnackBar3() {
+    this._snackBar.open("Lista adicionada!" , 'fechar',{duration:1000});
   }
 
   

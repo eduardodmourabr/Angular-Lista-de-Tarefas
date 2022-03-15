@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,  } from '@angular/core';
 
 @Component({
   selector: 'app-cmp',
   templateUrl: './cmp.component.html',
   styleUrls: ['./cmp.component.css']
 })
-export class CmpComponent implements OnInit {
+export class CmpComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    @Input()
+    titulo: string = 'titulo'
+  
 }

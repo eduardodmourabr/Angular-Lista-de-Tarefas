@@ -27,6 +27,7 @@
     width: 100%;
     overflow-y: auto;
 }
+
 .top{
     width: 400px;
     display: flex;
@@ -79,6 +80,6 @@
 }
 
 
- .btn-excluir{
-     
- }
+ .x1{ 
+     margin: 0;
+}

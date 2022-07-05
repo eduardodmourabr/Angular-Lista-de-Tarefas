@@ -1,6 +1,7 @@
 {
   "name": "projeto03",
   "version": "0.0.0",
+  "homepage": "Angular-Lista-de-Tarefas/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
